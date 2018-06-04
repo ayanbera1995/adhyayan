@@ -5,11 +5,15 @@
  */
 package adhyayan;
 
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+/*
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.Statement;*/
 
 /**
  *
@@ -21,7 +25,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try {
+        /*try {
             // TODO code application logic here
             Class.forName("java.sql.DriverManager");
             Connection conn = DriverManager.getConnection("jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12241247",
@@ -35,7 +39,18 @@ public class Main {
             }
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
+        }*/
+        try {
+            // Set System L&F
+            UIManager.setLookAndFeel(
+                UIManager.getSystemLookAndFeelClassName()
+            );
+        } 
+        catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
+           // handle exception
+           javax.swing.JOptionPane.showMessageDialog(null, "Error running software.\nContact administrator.");
+           System.exit(0);
         }
+        adhyayan.view.Splash.main(args);
     }
-    
 }
