@@ -10,8 +10,6 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -40,7 +38,7 @@ public class Main {
            System.exit(0);
         }
         
-        adhyayan.view.Splash sp = new adhyayan.view.Splash(); //adhyayan.view.Splash.main(args);
+        adhyayan.view.Splash sp = new adhyayan.view.Splash();
         sp.setVisible(true);
         
         Timer t4 = new Timer( 500, (ActionEvent e) -> {
